@@ -1,0 +1,137 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Triggered Alarms";
+}
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+<section>
+    <div class="container">
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 text-center"><img class="w-100 mw-200" src="~/assets/img/reporting-icon.png" alt="VeeamONEReceiver"></div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Triggered Alarms</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">Alerts triggered while page is open is pushed from VeeamONE to the api running on this site. </p>
+                <p class="fs-xl-1 ls-3 pe-xl-2">This could be easily adapted to pull from the new VeeamONE api on a polling cycle or to provide interaction back to interact with alarms directly such as acknowledgement.</p>
+            </div>
+        </div>
+
+        <div id="alarmDetailList">
+
+        </div>
+    </div><!-- end of .container-->
+</section><!-- <section> close ============================-->
+<!-- ============================================-->
+
+
+
+<script type="text/template" id="alarmDetail">
+
+    <div class="row mb-4 mt-6">
+        <div class="col-xl-7 d-none d-xl-block">
+            <div class="border rounded-1 border-700 h-100 features-items features-items-nohovereffect">
+
+                <div class="cracker" id="cracker" data-alarmId="alarmID">
+                    <div class="cracker-message">
+                        <div class="cracker-message__inner">
+                            {{alarmName}}
+                            <br>
+                            {{objectName}}
+                        </div>
+                    </div>
+                    <div class="cracker-left">
+                        <div class="cracker-left-inner">
+                            <div class="cracker-left__mask-top"></div>
+                            <div class="cracker-left__mask-bottom"></div>
+                            <div class="cracker-left__tail"></div>
+                            <div class="cracker-left__end"></div>
+                            <div class="cracker-left__body"></div>
+                            <div class="cracker-left-zigzag">
+                                <div class="cracker-left-zigzag__item"></div>
+                                <div class="cracker-left-zigzag__item"></div>
+                                <div class="cracker-left-zigzag__item"></div>
+                                <div class="cracker-left-zigzag__item"></div>
+                                <div class="cracker-left-zigzag__item"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cracker-right">
+                        <div class="cracker-right-inner">
+                            <div class="cracker-right__mask-top"></div>
+                            <div class="cracker-right__mask-bottom"></div>
+                            <div class="cracker-right__tail"></div>
+                            <div class="cracker-right__end"></div>
+                            <div class="cracker-right__body"></div>
+                            <div class="cracker-right-zigzag">
+                                <div class="cracker-right-zigzag__item"></div>
+                                <div class="cracker-right-zigzag__item"></div>
+                                <div class="cracker-right-zigzag__item"></div>
+                                <div class="cracker-right-zigzag__item"></div>
+                                <div class="cracker-right-zigzag__item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        <div class="col-xl-5">
+            <div class="border rounded-1 border-700 h-100 features-items">
+                <div class="p-5">
+
+                    <h3 class="pt-3 lh-base"> {{alarmName}}</h3>
+                    <p class="mb-2">{{objectName}} - {{information}}.</p>
+                    <p class="mb-0 small">Alarm ID {{alarmID}} was triggered with state {{alarmState}} at {{triggeredOn}}, previous state was {{alarmPreviousState}}.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/template" id="alarmCracker">
+
+    <div class="cracker" id="cracker" data-alarmId="alarmID">
+        <div class="cracker-message">
+            <div class="cracker-message__inner">
+                {{alarmName}}
+                <br>
+                {{objectName}}
+            </div>
+        </div>
+        <div class="cracker-left">
+            <div class="cracker-left-inner">
+                <div class="cracker-left__mask-top"></div>
+                <div class="cracker-left__mask-bottom"></div>
+                <div class="cracker-left__tail"></div>
+                <div class="cracker-left__end"></div>
+                <div class="cracker-left__body"></div>
+                <div class="cracker-left-zigzag">
+                    <div class="cracker-left-zigzag__item"></div>
+                    <div class="cracker-left-zigzag__item"></div>
+                    <div class="cracker-left-zigzag__item"></div>
+                    <div class="cracker-left-zigzag__item"></div>
+                    <div class="cracker-left-zigzag__item"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cracker-right">
+            <div class="cracker-right-inner">
+                <div class="cracker-right__mask-top"></div>
+                <div class="cracker-right__mask-bottom"></div>
+                <div class="cracker-right__tail"></div>
+                <div class="cracker-right__end"></div>
+                <div class="cracker-right__body"></div>
+                <div class="cracker-right-zigzag">
+                    <div class="cracker-right-zigzag__item"></div>
+                    <div class="cracker-right-zigzag__item"></div>
+                    <div class="cracker-right-zigzag__item"></div>
+                    <div class="cracker-right-zigzag__item"></div>
+                    <div class="cracker-right-zigzag__item"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>

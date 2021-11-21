@@ -1,0 +1,61 @@
+﻿@page
+@model GettingStartedModel
+@{
+    ViewData["Title"] = "Getting Started";
+}
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+<section class="mt-6">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9 col-lg-8 col-xl-5">
+                <h1 class="display-3 lh-sm">@ViewData["Title"]</h1>
+            </div>
+            <div class="col-md-9 col-xl-5">
+                <p class="fs-2">This page will help you get up and started with the VeeamONEReceiver.</p>
+            </div>
+        </div>
+    </div><!-- end of .container-->
+</section><!-- <section> close ============================-->
+<!-- ============================================-->
+
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+<section class="mt-5">
+    <div class="container">
+        <div class="text-center">
+            <p class="fs-2 ls-2"></p>
+            <h1 class="display-6 fw-semi-bold"></h1>
+        </div>
+        <div class="row mt-6 justify-content-xl-evenly px-xl-5">
+            <div class="col-xl-7 order-md-1">
+                <p>Save the gist below to a location on your VeeamONE server, such as <em>c:\alarmScripts\AlertTo-VeeamONEReceiver.ps1</em></p>
+                <p>Now in VeeamONE select <b>Alarm Management</b> followed by the events you wish to send to this dashboard, select on <b>Edit</b>, then under Notifications, add a new one where the action will be Run script.</p>
+                <p>The path for your action should be</p>
+                <pre class="mb-2">powershell.exe "c:\alarmScripts\AlertTo-VeeamONEReceiver.ps1" '%1' '%2' '%3' '%4' '%5' '%6' '%7'</pre>
+                <script src="https://gist.github.com/benyoungnz/32c0503ee49f5744a5d6a2cc98c2de95.js"></script>
+            
+            </div>
+            <div class="col-xl-5">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Alarm Trigger Script</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">The script used on the alarms you wish to push to this receiver page</p>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 false"><img class="w-100" src="assets/img/gallery/comment2.png" alt="..." /></div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">How does it work?</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2"> Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.</p>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1"><img class="w-100" src="assets/img/gallery/comment3.png" alt="..." /></div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">How does it work?</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2"> Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.</p>
+            </div>
+        </div>
+    </div><!-- end of .container-->
+</section><!-- <section> close ============================-->
+<!-- ============================================-->
