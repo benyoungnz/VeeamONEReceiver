@@ -33,7 +33,7 @@
                 <p>Save the gist below to a location on your VeeamONE server, such as <em>c:\alarmScripts\AlertTo-VeeamONEReceiver.ps1</em></p>
                 <p>Now in VeeamONE select <b>Alarm Management</b> followed by the events you wish to send to this dashboard, select on <b>Edit</b>, then under Notifications, add a new one where the action will be Run script.</p>
                 <p>The path for your action should be</p>
-                <pre class="mb-2">powershell.exe "c:\alarmScripts\AlertTo-VeeamONEReceiver.ps1" '%1' '%2' '%3' '%4' '%5' '%6' '%7'</pre>
+                <pre class="mb-2">powershell.exe "c:\alarmScripts\AlertTo-VeeamONEReceiver.ps1" '%1' '%2' '%3' '%4' '%5' '%6' %7</pre>
                 <script src="https://gist.github.com/benyoungnz/32c0503ee49f5744a5d6a2cc98c2de95.js"></script>
             
             </div>
